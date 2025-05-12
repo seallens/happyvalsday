@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To My Everything - Titi ♥</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffe6f2;
+            color: #5a2a38;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: #ff85a2;
+            color: white;
+        }
+
+        .heart {
+            color: #ff1a4b;
+            font-size: 2em;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .message {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: -20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 1.1em;
+        }
+
+        .signature {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+
+        .photo-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .photo-gallery img {
+            width: 30%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .falling-heart {
+            position: fixed;
+            color: #ff1a4b;
+            animation: fall linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-20vh) rotate(0deg); }
+            100% { transform: translateY(120vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Titi<span class="heart">♥</span></h1>
+        <p>You're My Always and Forever</p>
+    </header>
+
+    <div class="container">
+        <div class="message">
+            <p>My Dearest Titi,</p>
+
+            <p>Every moment with you feels like a precious gift I don't deserve but will forever cherish. I want you to know...</p>
+
+            <p style="text-align: center; font-size: 1.2em;">
+                <span class="heart">♥</span><br>
+                I adore you completely<br>
+                I cherish you endlessly<br>
+                I love you unconditionally
+            </p>
+
+            <p>Thank you for sharing your time, your patience, and your beautiful heart with me. The way you move through life with grace and kindness leaves me in awe every single day.</p>
+            
+            <p>I'm sorry we couldn't do something special for Valentine's Day, but our love shouldn't be bound to just one day. Every day with you is a celebration of our love, and I promise to keep making memories with you, today and always.</p>
+
+            <p>You're not just my love - you're my safe place, my inspiration, and my reason to be better. I promise to keep showing up for us, to keep choosing us, and to keep growing with you.</p>
+
+            <div class="signature">
+                <span class="heart">♥</span><br>
+                Forever Yours
+            </div>
+        </div>
+
+        <div class="photo-gallery">
+            <img src="1.jpg" alt="Memory 1">
+            <img src="2.jpg" alt="Memory 2">
+            <img src="3.jpgx" alt="Memory 3">
+        </div>
+    </div>
+
+    <script>
+        // Falling hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '♥';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.opacity = Math.random() * 0.5 + 0.5;
+            heart.classList.add('falling-heart');
+            
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(createHeart, 800);
+
+        // Click/tap hearts
+        document.addEventListener('click', (e) => {
+            const heart = document.createElement('div');
+            heart.innerHTML = '♥';
+            heart.style.position = 'fixed';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.fontSize = '35px';
+            heart.style.transform = 'translate(-50%, -50%)';
+            heart.style.animation = 'pulse 0.8s ease-out';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 1000);
+        });
+    </script>
+</body>
+</html>
